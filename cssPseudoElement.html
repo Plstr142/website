@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* CSS Pseudo element คือการที่มี element พิเศษให้อยู่ระหว่าง html */
+        .zou{
+            color: blue;
+        }
+        .zou::first-letter{
+            font-size: 40px;
+        }
+        /* หลักจากที่แทรกแล้ว first-letter จะมองเป็นตัวแรก */
+        .zou::before{
+            content: '?';
+        }
+        /* หลักจากที่แทรกแล้ว จะมองเป็นตัวหลัง */
+        .zou::after{
+            content: '?';
+        }
+        .smile::after{
+            content: '😆';
+        }
+    </style>
+</head>
+<body>
+    <div class="zou smile">TestZou</div>
+</body>
+</html>

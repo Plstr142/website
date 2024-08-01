@@ -1,0 +1,201 @@
+/* สิ่งที่อยู่ตรงนี้ จะมีไว้แค่ให้ dev อ่าน */
+/* ถ้าต้องการขยายในกล่องใช้ padding ,ถ้าต้องการขยายนอกกล่องใช้ margin */
+/* 1. แต่งใคร (id, class , DOM )2. แต่งอะไร */
+@font-face {
+  font-family: "kanit";
+  src: url("./Kanit//Kanit-Regular.ttf");
+}
+
+html {
+  font-size: 20px;
+}
+
+body {
+  font-family: "kanit";
+  /* font-size: 14px; */
+}
+
+.container {
+  width: 100%;
+  max-width: 640px;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: azure;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.header {
+  font-size: 30px;
+  text-align: center;
+}
+
+.header-form {
+  width: 140px;
+}
+
+.flex {
+  display: flex;
+}
+
+.form-input {
+  margin-bottom: 10px;
+}
+
+.center {
+  text-align: center;
+}
+
+input.form,
+textarea {
+  border: 1px gainsboro solid;
+  width: 100%;
+}
+
+.button {
+  border: 0;
+  width: 50%;
+  height: 40px;
+  background-color: #2962ff;
+  color: white;
+}
+
+@media screen and (max-width: 768px){
+  .flex{
+    flex-direction: column;
+  }          
+
+  .header{
+    font-size: 24px;
+  }
+
+  .button{
+    width: 100%;
+  }
+}
+
+/* 18*2 = 36 */
+/* .container{
+            font-size: 18px;
+        } */
+
+/* rem = root em ซึ่ง root ของมันอยู่ที่ html*/
+/* #register{
+            font-size: 2rem;
+        } */
+
+/* em = เป็นหน่วยที่ relative 
+        font-size ของ #registerที่อยู่ภายใต้ tag body ก็คือ 2เท่า ของจุดที่มันอยู่ */
+/* #register{
+            font-size: 2em;
+        }    */
+
+/* #register{
+            font-size: 24px;
+            color: blue;
+            font-weight: 800;
+            padding: 10px;
+            margin: 10px;
+            background-color: yellow;
+            border: 1px blue solid;
+            width: 50%;
+        }
+
+        .header-form{
+            font-weight: 800;
+        } */
+
+/* ถ้าต้องการให้แบ่งบรรทัดใช้ display: block ,ถ้าต้องการให้อยู่บรรทัดเดียวกันใช้ display: inline-block */
+/* inline จะไม่มองตัวเองเป็นกล่อง จะมองเป็น plain plain นึง ไม่สามารถทำงานกับ height ได้*/
+/* ถ้าไม่ใช้ inline-block , inline ให้ใช้ flex ซึ่งเป็น layout ที่อยู่ใน plain เดียวกัน */
+/* .gender{
+            display: flex;
+            flex-direction: row-reverse;
+        } */
+
+/* หน่วยของ css (px , rem, em ,vw, vh ,percent) */
+/* em = เป็นหน่วยที่ relative */
+/* vh = viewheight จะรันตามขนาดหน้าจอในขณะนั้น*/
+/* .box{
+            background-color: black;
+            height: 20px;
+            width: 100vw;
+        } */
+
+/* css image ใช้ width height ของกล่องเป็นตัวหลักในการควบคุม */
+/* .image{
+            background-image: url('https://fastly.picsum.photos/id/876/200/200.jpg?hmac=XKoZLM866KBZwrT4IBuHbiUOfu0kh_qSWT6mitQyYQo');
+            height: 200px;
+            width: 100px;
+            cover ภาพจะชิดบนซ้าย
+            background-size: cover;
+            background-position: top right;
+            background-repeat: no-repeat;
+        } */
+
+/* float จะลอยซึ่งจะเอาอะไรมาแทรกก็ได้ */
+/* .left{
+            float: left;
+        }
+
+        .right{
+            float: right;
+        } */
+
+/* top , bottom , left , right */
+/* relative เป็น position ที่ผลักหรือดันตำแหน่ง .00 ของตำแหน่งตัวเอง หรือจากตำแหน่งที่ใกล้เคียง */
+/* absolute จะมองไปที่ระดับ viewport หรือระดับหน้าจอใหญ่ๆและจะแปะตำแหน่งไว้ */
+/* fixed จะคล้ายกับ absolute เพียงแต่ว่าจะ scroll ไปตามหน้าจอ */
+/* sticky ในตอนแรกจะเป็นเหมือน relative และในตอนที่เรา scroll ไปจนกว่าจะหลุด scope หรือ container ที่ตั้งไว้ ซึ่งก็จะมีค่าเท่ากับ fixed  */
+/* .container{
+            height: 1800px;
+        }
+        .relative{
+            
+            position: relative;
+            left: 20px;
+        }
+
+        
+        .absolute{
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        
+        .fixed{
+            position: fixed;
+            top: 0;
+            right: 0;
+        }
+
+        
+        .sticky{
+            position: sticky;
+            top: 50px;
+        } */
+
+/* .container{
+            display: flex;
+        }
+        
+        .item-left{
+            background-color: red;
+            flex: 1;
+        }
+        .item-right{
+            background-color: blue;
+            flex: 2;
+        }
+
+        .grid-container{
+            display: grid;
+             fr = fraction = อัตราส่วน สามารถแบ่ง column ได้
+            grid-template-columns: 1fr 2fr; 
+        }
+
+        .item-1 , .item-3 {
+            background-color: blue;
+        } */
+/* display 5 ตัว --> block, inline, inline-block, flex , grid  */

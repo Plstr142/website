@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive</title>
+    <style>
+        /* ((((Menu bar(desktop) and nav bar(mobile))))) */
+        ul{
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+        /* Desktop */
+        .desktop ul{
+            display: flex;
+        }
+
+        .desktop ul > li{
+            margin-right: 20px;
+        }
+
+        .mobile-menu,
+        .mobile{
+            display: none;
+        }
+        
+        @media screen and (max-width: 768px){
+            .desktop{
+                display: none;
+            }
+            .mobile-menu{
+                display: block;
+            }
+            .mobile-menu:hover + .mobile{
+                display: block;
+            }
+        }
+
+
+
+        /* ((((Fluid Layouts และ Flexible Grid Systems))))
+        .container{
+            display: flex;
+        }
+
+        .container .item{
+            padding: 10px;
+            flex: 1;
+        }
+        
+        .grid-container{
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+        }
+
+        .grid-container .item{
+            padding: 10px;
+            background-color: yellow;
+            flex: 1;
+        } */
+ 
+        /* responsive tablet style */
+        /* @media screen and (max-width: 768px){
+            .container{
+                flex-direction: column;
+            }
+            .grid-container{
+                grid-template-columns: 1fr 1fr;
+            }
+        } */
+
+        /* responsive mobile style*/
+        /* @media screen and (max-width: 640px){
+            .grid-container{
+                grid-template-columns: 1fr;
+            }
+        } ((((Fluid Layouts และ Flexible Grid Systems)))) */
+
+        /* ((((images srcset)))) @media screen and (min-width:768px){
+            .container{
+                background-color: blue;    
+            }
+        }  ((((images srcset)))) */
+    </style>
+</head>
+<body>
+    <div class="desktop">
+        <ul>
+            <li>Home</li>
+            <li>About</li>
+            <li>Contact</li>
+        </ul>
+    </div>
+
+    <div class="mobile-menu">Menu</div>
+    <div class="mobile">
+        <ul>
+            <li>Home</li>
+            <li>About</li>
+            <li>Contact</li>
+        </ul>
+    </div>
+
+
+
+
+
+
+
+
+    <!-- ((((Fluid Layouts และ Flexible Grid Systems))))
+    <div class="container">
+            <div class="item">Item1</div>
+            <div class="item">Item2</div>
+    </div>
+    <div class="grid-container">
+            <div class="item">Item1</div>
+            <div class="item">Item2</div>
+            <div class="item">Item3</div>
+            <div class="item">Item4</div>
+            <div class="item">Item5</div>
+            <div class="item">Item6</div>
+    </div> ((((Fluid Layouts และ Flexible Grid Systems)))) -->
+
+    <!-- ((((images srcset)))) <picture>
+        <source 
+        media="(max-width: 768px)" 
+        srcset="https://fastly.picsum.photos/id/898/200/200.jpg?hmac=OJ_q58cXkhJJW-v5_I8OBbmtuEPORKBZ5hXG9PnO4QM">
+        <img src="https://fastly.picsum.photos/id/108/200/200.jpg?hmac=JbZfKLS2wWv420Eq9HSIstvyiTaniwUcJjhDeOdwc88" alt="">
+    </picture> ((((images srcset)))) -->
+</body>
+</html>

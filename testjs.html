@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <!-- ((((Select DOM)))) -->
+    <!-- value คือ autofill -->
+    <!-- input main -->
+    <!-- ชื่อจริง <input
+        type="text" 
+        name="firstname" 
+        value="ทดสอบ"> -->
+
+
+
+
+    <!-- input 4 -->
+    <!-- ความสนใจ
+    <input type="checkbox" name="interest" value="หนังสือ"> หนังสือ
+    <input type="checkbox" name="interest" value="เกม"> เกม
+    <input type="checkbox" name="interest" value="กีฬา"> กีฬา 
+    ((((Select DOM))))
+    -->
+
+
+
+
+
+
+    <!-- ((((Event JS)))) -->
+    <!-- Event onclick="ชื่อฟังก์ชั่นที่ชื่อเดียวกัน" -->
+    <!-- <button onclick="userClicked()">คลิกที่นี่</button>
+    <div onclick="userClickDIV()">คลิกเถอะ</div> -->
+
+
+    
+
+
+    <!-- Event onchange-->
+    <!-- <input type="radio" name="gender" value="ชาย" onchange="changeGender()"> ชาย
+    <input type="radio" name="gender" value="หญิง" onchange="changeGender()"> หญิง
+    <input type="radio" name="gender" value="อื่นๆ" onchange="changeGender()"> อื่นๆ
+ -->
+
+
+
+
+
+    <!-- onkeydown, onkeyup, onkeypress -->
+    <!-- ชื่อจริง <input type="text" name="firstname" onkeyup="changeFirstname()">  -->
+
+
+
+
+
+    <!-- Event onmouseover, onmouseup, onmousedown -->
+    <!-- <div
+    onmouseover="overItem()"
+    onmouseup="upItem()"
+    onmousedown="downItem()"
+    > คลิกที่นี่
+    </div> -->
+
+
+
+
+
+
+
+    <!-- bind event ด้วย addEventListener -->   
+    <!-- <button onclick="clickItem()">ปุ่มที่ 1</button>
+    <button id="thisbutton">ปุ่มที่ 2</button> 
+    ((((Event JS))))
+    -->
+
+
+
+
+
+    <!-- ((((การเข้าถึงและการ update HTML DOM -> จิ้ม ดักจับ event และแก้ไขของที่อยู่ใน html )))) -->
+    <!-- <div id="hello">Hello <span style="display: none;">zou</span></div> -->
+
+
+
+
+
+
+    <!-- html ที่มีความ complex -->
+    <!-- <div>
+        <h2>สิ่งที่ user สนใจ</h2>
+        <div id="content">
+            แสดงสิ่งที่ user สนใจออกมา
+            <ul>
+                <li>เกม</li>
+                <li>วิดิโอ</li>
+            </ul>
+
+        </div>
+    </div>
+    <input type="checkbox" name="interest" value="กีฬา"> กีฬา
+    <input type="checkbox" name="interest" value="เกม"> เกม
+    <input type="checkbox" name="interest" value="วิดิโอ"> วิดิโอ
+    <input type="checkbox" name="interest" value="หนังสือ"> หนังสือ
+    <button onclick="submitInterest()">ส่งสิ่งที่สนใจ</button> -->
+
+
+
+
+
+    <!-- getAttribute -->
+    <!-- <a id="thislink" href="https://google.com" target="_blank">Google</a>
+    ชื่อจริง <input type="text" name="firstname" value="test"> -->
+
+
+
+
+
+
+    <!-- การ self disabled button -->
+    <button onclick="submitData(event)">ส่งข้อมูล</button>
+    <script>
+        // document คือตัวแปรเอาไว้ access
+        // let firstnameDOM = document.getElementById('firstname')
+        // console.log('firstname DOM: ', firstnameDOM.value)
+
+
+
+
+
+        // getElementByClassname ใส่ class กำกับใน html เพื่อทำการดึงค่าออกมา
+        // let inputsDom = document.getElementsByClassName('input')
+        // // สำหรับแสดง DOM html ออกมา (เป็น Array เนื่องจากมีหลายอัน)
+        // console.log(inputsDom)
+        // // สำหรับดึงค่า value ใน checkbox ออกมาทั้งหมด
+        // for(let i = 0; i < inputsDom.length; i++){
+        //    console.log(inputsDom[i].value) 
+        // }
+
+
+
+
+        
+        // ((((select ตาม class))))
+        // css selector --> querySelector 
+        // let firstnameDOM = document.querySelector('.input')
+        // console.log(firstnameDOM.value)
+
+
+
+
+
+
+        /* 
+         ((((select ตาม id)))
+        ชื่อจริง <input
+        id="firstname"
+        class="input"
+        type="text" 
+        name="firstname" 
+        value="ทดสอบ">
+        let inputsDom = document.querySelector('#firstname')
+        for(let i = 0; i < inputsDom.length; i++){
+            console.log(inputsDom[i].value)
+        } */
+
+
+
+
+
+
+        //((((select ตาม attribute))))
+        // querySelector ไปยัง DOM input attribute name = firstname
+        // let firstnameDOM = document.querySelector('input[name=firstname]')
+        // console.log(firstnameDOM.value)
+
+
+
+
+        
+
+        // จาก <!-- input 4 -->
+        // ((((result จะออกมาเป็น array เหมือนการใช้ getElementByClassName)))
+        // let checkboxInputs = document.querySelectorAll('input[name=interest]')
+        // for(let i = 0; i < checkboxInputs.length; i++){
+        //     console.log('checkbox value: ', checkboxInputs[i].value)
+        // }
+
+
+
+
+
+
+        
+        // (((((Event JS)))))
+        // Event Onclick
+        // function userClicked(){
+        //     console.log('button click')
+        // }
+        
+        // function userClickDIV(){
+        //     console.log('div click')
+        // }
+
+
+
+
+
+        
+        
+        // Event Onchange
+        // function changeGender(){
+        //     // เลือก gender ทุก input ออกมา
+        //     let genderInputs = document.querySelectorAll('input[name=gender]')
+        //     let gender = ''
+
+        //     // วนลูบตาม gender ใครมี check อยู่ = เพศนั้นโดนเลือก
+        //     for(let i = 0; i < genderInputs.length; i++){
+        //         if(genderInputs[i].checked){
+        //             // พ่น value ออกมา
+        //             // เก็บลงตัวแปร gender
+        //             gender = genderInputs[i].value
+        //         }
+        //     }
+        //     console.log('selected gender', gender)
+        // }
+        
+
+
+
+
+
+        // Event onkeydown, onkeyup, onkeypress
+        // function changeFirstname(){
+        //     // จิ้มไปยัง input firstname
+        //     let firstNameDOM = document.querySelector('input[name=firstname]')
+        //     // เอา value ของ firstname ออกมา
+        //     console.log('change first name: ', firstNameDOM.value)
+        // }
+
+
+
+
+
+
+        // Event onmouseover, onmouseup, onmousedown
+    //    function overItem(){
+    //     console.log('mouse over')
+    //    }
+    //    function upItem(){
+    //     console.log('mouse up')
+    //    }
+    //    function downItem(){
+    //     console.log('mouse down')
+    //    }
+
+
+
+
+
+    // bind event ด้วย addEventListener
+    // let thisButtonDOM = document.getElementById('thisbutton')
+    // // '' parameter ที่จะบ่งบอกว่าจะเล่นกับ event อะไร เช่น 'click' มีค่าเท่ากับ event onclick
+    // thisButtonDOM.addEventListener('click', function(){
+    //     console.log('ปุ่มที่ 2 clicked')
+    // })
+    // function clickItem() {
+    //     console.log('ปุ่มที่ 1 clicked')
+    // }
+
+
+
+
+
+    // ((((การเข้าถึงและการ update HTML DOM -> จิ้ม ดักจับ event และแก้ไขของที่อยู่ใน html ))))  
+    // textcontent คือความทั้งหมดที่อยู่ระหว่าง tag html มาแสดงผล
+    // innertext คือข้อความทั้งหมดที่ user มองเห็นดึงออกมา
+    // innerhtml คือ html ทั้ง set สามารถเขียนให้ reverse กลับเป็น html ได้
+    // let helloDom = document.getElementById('hello')
+    // helloDom.innerHTML = 'Hello <b>P</b>'
+    // console.log(helloDom.textContent)
+    // console.log(helloDom.innerText)
+    // console.log(helloDom.innerHTML)
+
+
+
+
+
+
+    // function submitInterest(){
+    //     // เลือกไปยัง checkbox ทั้งหมด
+    //     let interestDOM = document.querySelectorAll('input[name=interest]')
+    //     let contentHTML = '<ul>'
+    //     // เอาค่า value ออกมาเฉพาะตัวที่เลือก
+    //     for(let i = 0; i < interestDOM.length; i++){
+    //         if(interestDOM[i].checked){
+    //             contentHTML += '<li>' + interestDOM[i].value + '</li>'
+    //         }
+    //     }
+    //     // วนค่าตัวที่เลือก ใส่ html กลับไป
+    //     contentHTML += '</ul>'
+
+    //     // ใส่ html กลับเข้าไป (reverse html กลับมาใช้)
+    //     let contentDOM = document.getElementById('content')
+    //     contentDOM.innerHTML = contentHTML
+    // }
+
+
+
+
+
+
+    // ((((การอ่านและอัพเดท Attribute ลง html element))))
+    // let thislinkDOM = document.getElementById('thislink')
+    // let thisInput = document.querySelector('input[name=firstname]')
+    // console.log(thislinkDOM.getAttribute('href'))
+    
+    // setAttribute เปลี่ยนลิงค์
+    // thislinkDOM.setAttribute('href', 'https://yahoo.com')
+
+    // ****getAttribute() ดึงออกมาเพื่อแสดงผลว่าค่าเป็นอะไร****
+    // console.log(thislinkDOM.getAttribute('href'))
+
+
+    // console.log(thislinkDOM.getAttribute('target'))
+    // console.log(thisInput.value)
+    // console.log(thisInput.getAttribute('value'))
+
+
+
+
+
+
+    // *****setAttribute สำหรับการ set ค่า Attribute ที่ระบุเอาไว้*****
+    // เมื่อกดปุ่ม ให้ disable self button ออกไป
+    // function submitData(){
+    //     let thisButtonDOM = document.getElementById('thisbutton')
+    //     thisButtonDOM.setAttribute('disabled', 'true')
+    // }
+
+
+    // ***** ใช้ key style ทำการ update ผ่าน Attribute เปลี่ยนสีปุ่มเป็นสีแดง เมื่อกดปุ่ม*****
+    function submitData(event){
+        let thisButtonDOM = event.target
+        thisButtonDOM.style.borderColor = 'blue'
+        thisButtonDOM.style.backgroundColor = 'gray'
+        console.log(thisButtonDOM.style.borderColor)
+        console.log(thisButtonDOM.style.backgroundColor)
+    }
+
+    </script>
+</body>
+</html>
