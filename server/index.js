@@ -31,6 +31,36 @@ const initMySQL = async () =>{
     })
 }
 
+const validateData = (userData) => {
+    let errors = []
+
+    if(!userData.firstname){
+        errors.push('กรุณาใส่ชื่อจริง')
+    }
+
+    if(!userData.lastname){
+        errors.push('กรุณาใส่นามสกุล')
+    }
+
+    if(!userData.age){
+        errors.push('กรุณาใส่อายุ')
+    }
+
+    if(!userData.gender){
+        errors.push('กรุณาใส่เพศ')
+    }
+
+    if(!userData.interests){
+        errors.push('กรุณาใส่ความสนใจ')
+    }
+
+    if(!userData.description){
+        errors.push('กรุณาใส่รายละเอียดของคุณ')
+    }
+
+    return errors
+}
+
 
 /* app.get('/testdb', (req, res) =>{
     console.log('test')
@@ -96,26 +126,31 @@ app.post('/users' , async (req , res) =>{
     // handle error 
     try{
         let user = req.body
+
+        const errors = validateData(user)
+        if(errors.length > 0){
+            throw{
+                message: 'กรอกข้อมูลไม่ครบ',
+                errors: errors
+            }
+        }
         const results = await conn.query('INSERT INTO users SET ?', user)
         res.json({
             message: 'insert ok',
             data: results[0]
         })
     }catch (error){
+        const errorMessage = error.message || 'something wrong'
+        const errors = error.errors || []
         console.error('error message', error.message)
         res.status(500).json({
-            message: 'something wrong'
+            message: errorMessage,
+            errors: errors
         })
     }
-    
-
-
 
     // console.log('results', results)
 
-   
-
-    
     // user.id = counter
     // // running number control ผ่าน counter
     // counter += 1
